@@ -1,0 +1,11 @@
+export type Icon =
+  | 'absence-tracker'
+  | 'analyzer'
+  | 'book'
+  | 'calendar'
+  | 'home'
+  | 'menu'
+  | 'setting'
+  | 'timetable'
+  | 'tools'
+  | 'tracker'

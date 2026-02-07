@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+$background: #1E1E1E;
+$background-highlight: rgba(57, 65, 66, 0.3);
+$foreground: rgba(57, 65, 66, 0.2);
+$primary: #FFFFFF;
+$secondary: #AAAAAA;
+$accent: #04BBFE;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: $background;
+  font-family: 'Instrument Sans', sans-serif;
+  color: $primary;
+}
+
+svg {
+  fill: $primary;
+}
