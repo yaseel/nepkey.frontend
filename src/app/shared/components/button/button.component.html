@@ -1,3 +1,11 @@
+<ng-template #btnIcon>
+  @if (icon) {
+    <app-icon [icon]="icon" [size]="resolvedIconSize"></app-icon>
+  } @else if (img) {
+    <app-icon [img]="img" [size]="resolvedIconSize"></app-icon>
+  }
+</ng-template>
+
 <button
   class="btn"
   [class.btn--bg]="background"
@@ -7,13 +15,11 @@
   [style.--btn-radius]="cssBorderRadius"
   [style.width]="width"
 >
-  @if (icon) {
-    <app-icon [icon]="icon" [size]="size"></app-icon>
-
-  } @else if (img) {
-    <app-icon [img]="img" [size]="size"></app-icon>
+  @if (iconSide === 'left') {
+    <ng-container *ngTemplateOutlet="btnIcon"></ng-container>
   }
-
   <ng-content></ng-content>
-
+  @if (iconSide === 'right') {
+    <ng-container *ngTemplateOutlet="btnIcon"></ng-container>
+  }
 </button>

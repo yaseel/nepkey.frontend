@@ -8,9 +8,8 @@ describe('AbsenceTrackerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AbsenceTrackerComponent]
-    })
-    .compileComponents();
+      imports: [AbsenceTrackerComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(AbsenceTrackerComponent);
     component = fixture.componentInstance;

@@ -1,4 +1,1 @@
-export type Color =
-  "primary" |
-  "secondary" |
-  "accent";
+export type Color = 'primary' | 'secondary' | 'accent';

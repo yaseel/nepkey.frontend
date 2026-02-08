@@ -1,4 +1,1 @@
-export type Image =
-  "neptun" |
-  "canvas" |
-  "tms";
+export type Image = 'neptun' | 'canvas' | 'tms';

@@ -9,3 +9,6 @@ export type Icon =
   | 'timetable'
   | 'tools'
   | 'tracker'
+  | 'plus'
+  | 'minus'
+  | 'arrow';

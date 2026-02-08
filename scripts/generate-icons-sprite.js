@@ -10,7 +10,8 @@ if (!fs.existsSync(iconsDir)) {
   process.exit(1);
 }
 
-const files = fs.readdirSync(iconsDir)
+const files = fs
+  .readdirSync(iconsDir)
   .filter((f) => f.endsWith('.svg'))
   .sort();
 
@@ -27,7 +28,10 @@ const symbols = files.map((file) => {
   const viewBox = viewBoxMatch ? viewBoxMatch[1] : '0 0 24 24';
 
   svg = svg.replace(/^<\?xml[^>]*>\s*/i, '');
-  svg = svg.replace(/^<svg[^>]*>/i, '').replace(/<\/svg>\s*$/i, '').trim();
+  svg = svg
+    .replace(/^<svg[^>]*>/i, '')
+    .replace(/<\/svg>\s*$/i, '')
+    .trim();
 
   return `<symbol id="${key}" viewBox="${viewBox}">${svg}</symbol>`;
 });
