@@ -1,2 +1,14 @@
 <app-button icon="menu"></app-button>
-<p>sidebar works!</p>
+
+<aside class="aside">
+  <app-button i18n="@@dashboard" icon="home" color="secondary">Dashboard</app-button>
+  <app-button i18n="@@timetable" icon="timetable" color="secondary">Timetable</app-button>
+  <app-button i18n="@@calendar" icon="calendar" color="secondary">Calendar</app-button>
+  <app-button i18n="@@absenceTracker" icon="tracker" color="secondary">Absence Tracker</app-button>
+  <app-button i18n="@@tmsPlagiumAnalyzer" icon="analyzer" color="secondary">TMS Plagium Analyzer</app-button>
+  <app-button i18n="@@settings" icon="setting" color="secondary">Settings</app-button>
+</aside>
+
+<div class="spacer"></div>
+
+<app-button [background]="true" size="md">Samu</app-button>

@@ -1,0 +1,17 @@
+.btn {
+  background: none;
+  border: none;
+  color: var(--btn-color);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: var(--btn-size);
+  text-align: left;
+
+  &--bg {
+    background-color: var(--background-highlight);
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+  }
+}

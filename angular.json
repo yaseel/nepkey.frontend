@@ -4,6 +4,12 @@
   "newProjectRoot": "projects",
   "projects": {
     "nepkey": {
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "hu-HU": "src/locale/messages.hu.json"
+        }
+      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,11 +23,13 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "localize": ["en-US"],
             "outputPath": "dist/nepkey",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
-              "zone.js"
+              "zone.js",
+              "@angular/localize/init"
             ],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
@@ -80,7 +88,8 @@
           "options": {
             "polyfills": [
               "zone.js",
-              "zone.js/testing"
+              "zone.js/testing",
+              "@angular/localize/init"
             ],
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",

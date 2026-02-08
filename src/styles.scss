@@ -1,20 +1,40 @@
-$background: #1E1E1E;
-$background-highlight: rgba(57, 65, 66, 0.3);
-$foreground: rgba(57, 65, 66, 0.2);
-$primary: #FFFFFF;
-$secondary: #AAAAAA;
-$accent: #04BBFE;
+:root {
+  // colors
+  --background: #1E1E1E;
+  --background-highlight: rgba(57, 65, 66, 0.3);
+  --foreground: rgba(57, 65, 66, 0.2);
+  --primary: #FFFFFF;
+  --secondary: #AAAAAA;
+  --secondary-50: rgba(170, 170, 170, 0.5);
+  --accent: #04BBFE;
+
+  // text
+  --fs-xs: 0.75rem;   // 12px  (helper text)
+  --fs-sm: 0.875rem;  // 14px  (secondary text)
+  --fs-md: 1rem;      // 16px  (body text) ← default
+  --fs-lg: 1.125rem;  // 18px
+  --fs-xl: 1.25rem;   // 20px
+
+  // headings
+  --fs-h3: 1.5rem;    // 24px
+  --fs-h2: 1.75rem;   // 28px
+  --fs-h1: 2rem;      // 32px
+}
 
 * {
   box-sizing: border-box;
 }
 
 html {
-  background-color: $background;
+  background-color: var(--background);
   font-family: 'Instrument Sans', sans-serif;
-  color: $primary;
+  color: var(--primary);
+}
+
+body {
+  margin: 0;
 }
 
 svg {
-  fill: $primary;
+  fill: var(--primary);
 }

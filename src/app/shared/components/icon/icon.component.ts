@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Size } from '../../models/size.model';
-import { Icon } from '../../models';
+import { Icon } from '../../models/icon.model';
 
 @Component({
   selector: 'app-icon',
@@ -10,7 +10,7 @@ import { Icon } from '../../models';
 })
 export class IconComponent {
   @Input({ required: true }) icon!: Icon;
-  @Input() size: Size = 's';
+  @Input() size: Size = 'sm';
 
   get href(): string {
     return `/icons.svg#${this.icon}`;
@@ -18,9 +18,9 @@ export class IconComponent {
 
   get pixelSize(): number {
     switch (this.size) {
-      case 's': return 20;
-      case 'm': return 25;
-      case 'l': return 30;
+      case 'sm': return 20;
+      case 'md': return 25;
+      case 'lg': return 30;
     }
   }
 }

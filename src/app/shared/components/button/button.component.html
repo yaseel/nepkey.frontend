@@ -1,1 +1,9 @@
-<app-icon [icon]="icon" [size]="size"></app-icon>
+<button
+  class="btn"
+  [class.btn--bg]="background"
+  [style.--btn-color]="cssColor"
+  [style.--btn-size]="cssSize"
+>
+  <app-icon [icon]="icon" [size]="size"></app-icon>
+  <ng-content></ng-content>
+</button>

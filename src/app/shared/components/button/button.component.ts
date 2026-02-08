@@ -1,7 +1,8 @@
 import {Component, Input} from '@angular/core';
 import {IconComponent} from '../icon/icon.component';
-import {Icon} from '../../models';
+import {Icon} from '../../models/icon.model';
 import {Size} from '../../models/size.model';
+import {Color} from '../../models/color.model';
 
 @Component({
   selector: 'app-button',
@@ -13,5 +14,15 @@ import {Size} from '../../models/size.model';
 })
 export class ButtonComponent {
   @Input() icon!: Icon;
-  @Input() size: Size = "s";
+  @Input() size: Size = "sm";
+  @Input() background: boolean = false;
+  @Input() color: Color = "primary";
+
+  get cssColor(): string {
+    return `var(--${this.color})`;
+  }
+
+  get cssSize(): string {
+    return `var(--fs-${this.size})`;
+  }
 }
