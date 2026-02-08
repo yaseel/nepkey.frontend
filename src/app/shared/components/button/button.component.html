@@ -1,9 +1,19 @@
 <button
   class="btn"
   [class.btn--bg]="background"
+  [class.btn--center]="center"
   [style.--btn-color]="cssColor"
   [style.--btn-size]="cssSize"
+  [style.--btn-radius]="cssBorderRadius"
+  [style.width]="width"
 >
-  <app-icon [icon]="icon" [size]="size"></app-icon>
+  @if (icon) {
+    <app-icon [icon]="icon" [size]="size"></app-icon>
+
+  } @else if (img) {
+    <app-icon [img]="img" [size]="size"></app-icon>
+  }
+
   <ng-content></ng-content>
+
 </button>

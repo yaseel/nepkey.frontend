@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Size } from '../../models/size.model';
 import { Icon } from '../../models/icon.model';
+import {Image} from '../../models/image.model';
 
 @Component({
   selector: 'app-icon',
@@ -9,11 +10,14 @@ import { Icon } from '../../models/icon.model';
   styleUrl: './icon.component.scss',
 })
 export class IconComponent {
-  @Input({ required: true }) icon!: Icon;
+  @Input() icon?: Icon;
+  @Input() img?: Image;
   @Input() size: Size = 'sm';
 
   get href(): string {
-    return `/icons.svg#${this.icon}`;
+    if (this.icon) return `/icons.svg#${this.icon}`;
+    else if (this.img) return `/images/${this.img}.png`;
+    else throw Error("Icon component used without providing icon or img");
   }
 
   get pixelSize(): number {

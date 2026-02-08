@@ -1,3 +1,7 @@
-<svg [attr.width]="pixelSize" [attr.height]="pixelSize">
-  <use [attr.href]="href"></use>
-</svg>
+@if (icon) {
+  <svg [attr.width]="pixelSize" [attr.height]="pixelSize">
+    <use [attr.href]="href"></use>
+  </svg>
+} @else if (img) {
+  <img [src]="href" [alt]="img" [height]="pixelSize">
+}

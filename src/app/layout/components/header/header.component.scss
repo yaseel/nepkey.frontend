@@ -1,0 +1,15 @@
+:host {
+  border-bottom: 1px solid var(--secondary-50);
+}
+
+.header {
+  height: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 20px;
+}
+
+.buttons {
+  display: flex;
+}
