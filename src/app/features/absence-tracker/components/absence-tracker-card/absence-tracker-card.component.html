@@ -1,0 +1,20 @@
+<div class="info">
+  <h3>Functional Programming</h3>
+
+  <div class="label">
+    <app-icon icon="book" size="xs"></app-icon>
+    <span>Lecture</span>
+  </div>
+</div>
+
+<div class="controls">
+  <app-button size="lg" icon="minus"></app-button>
+  <span class="count">{{ count }}</span>
+  <app-button size="lg" icon="plus"></app-button>
+</div>
+
+<span class="max-label">Max. {{ max }}</span>
+
+<div class="progress-bar">
+  <div class="progress-fill" [style.width.%]="progressPercentage"></div>
+</div>
