@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import { IconComponent } from '../icon/icon.component';
 import { Icon } from '../../models/icon.model';
 import { Size } from '../../models/size.model';
@@ -14,6 +14,7 @@ import { NgTemplateOutlet } from '@angular/common';
   styleUrl: './button.component.scss',
 })
 export class ButtonComponent {
+  @Output() clicked = new EventEmitter<void>();
   @Input() icon?: Icon;
   @Input() img?: Image;
   @Input() size: Size = 'sm';
@@ -24,6 +25,10 @@ export class ButtonComponent {
   @Input() width?: string;
   @Input() center: boolean = false;
   @Input() iconSide: Side = 'left';
+
+  onClick() {
+    this.clicked.emit();
+  }
 
   get cssColor(): string {
     return `var(--${this.color})`;

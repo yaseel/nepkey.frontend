@@ -14,6 +14,7 @@
   [style.--btn-size]="cssSize"
   [style.--btn-radius]="cssBorderRadius"
   [style.width]="width"
+  (click)="onClick()"
 >
   @if (iconSide === 'left') {
     <ng-container *ngTemplateOutlet="btnIcon"></ng-container>
