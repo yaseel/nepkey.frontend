@@ -6,6 +6,7 @@ import { Color } from '../../models/color.model';
 import { Image } from '../../models/image.model';
 import { Side } from '../../models/side.model';
 import { NgTemplateOutlet } from '@angular/common';
+import {ButtonBgColor} from '../../models/button-color.model';
 
 @Component({
   selector: 'app-button',
@@ -17,17 +18,22 @@ export class ButtonComponent {
   @Output() clicked = new EventEmitter<void>();
   @Input() icon?: Icon;
   @Input() img?: Image;
-  @Input() size: Size = 'sm';
+  @Input() size: Size = 'md';
   @Input() iconSize?: Size;
-  @Input() background: boolean = false;
+  @Input() btnBgColor?: ButtonBgColor;
   @Input() color: Color = 'primary';
   @Input() circular: boolean = false;
   @Input() width?: string;
   @Input() center: boolean = false;
   @Input() iconSide: Side = 'left';
+  @Input() type: HTMLButtonElement['type'] = 'button'
 
   onClick() {
     this.clicked.emit();
+  }
+
+  get cssBgColor(): string {
+    return `var(--${this.btnBgColor})`;
   }
 
   get cssColor(): string {

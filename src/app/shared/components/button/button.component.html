@@ -8,13 +8,15 @@
 
 <button
   class="btn"
-  [class.btn--bg]="background"
+  [class.btn--bg]="!!btnBgColor"
   [class.btn--center]="center"
   [style.--btn-color]="cssColor"
+  [style.--btn-bg-color]="cssBgColor"
   [style.--btn-size]="cssSize"
   [style.--btn-radius]="cssBorderRadius"
   [style.width]="width"
   (click)="onClick()"
+  [type]="type"
 >
   @if (iconSide === 'left') {
     <ng-container *ngTemplateOutlet="btnIcon"></ng-container>

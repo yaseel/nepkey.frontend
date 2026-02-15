@@ -2,12 +2,14 @@
   // colors
   --background: #1e1e1e;
   --background-highlight: rgba(57, 65, 66, 0.3);
+  --foreground-highlight: rgb(57, 65, 66);
   --foreground: rgba(57, 65, 66, 0.2);
   --hover-bg: rgba(255, 255, 255, 0.1);
   --primary: #ffffff;
   --secondary: #aaaaaa;
   --secondary-50: rgba(170, 170, 170, 0.5);
-  --accent: #04bbfe;
+  --accent-light: #04bbfe;
+  --accent-dark: #0068E5;
   --label-background: rgba(120, 120, 128, 0.16);
 
   // text
@@ -53,4 +55,36 @@ hr {
   border: none;
   height: 1px;
   background-color: var(--secondary-50);
+  margin-bottom: 30px;
+}
+
+label {
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+input, select {
+  background-color: var(--foreground-highlight);
+  border: none;
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  color: white;
+  font-size: var(--fs-md);
+}
+
+select:invalid,
+select option[disabled]:checked {
+  color: var(--secondary);
+}
+
+select option {
+  color: white;
+}
+
+input::placeholder {
+  color: var(--secondary);
+}
+
+input:focus, select:focus {
+  outline: 1px solid white;
 }

@@ -1,0 +1,20 @@
+.description {
+  color: var(--secondary);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .__single-input-field {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .__double-input-container {
+    display: flex;
+    gap: 20px;
+  }
+}
