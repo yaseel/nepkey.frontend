@@ -23,6 +23,7 @@ export class ButtonComponent {
   @Input() btnBgColor?: ButtonBgColor;
   @Input() color: Color = 'primary';
   @Input() circular: boolean = false;
+  @Input() shadow: boolean = false;
   @Input() width?: string;
   @Input() center: boolean = false;
   @Input() iconSide: Side = 'left';

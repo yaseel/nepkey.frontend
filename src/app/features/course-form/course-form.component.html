@@ -5,12 +5,12 @@
 <hr>
 
 <form class="form" action="">
-  <div class="__single-input-field">
+  <div class="form__single-input-field">
     <label i18n="@@courseName" for="">Course Name</label>
     <input type="text" placeholder="Functional Programming" i18n-placeholder="@@courseNamePlaceholder">
   </div>
 
-  <div class="__single-input-field">
+  <div class="form__single-input-field">
     <label i18n="@@courseType" for="">Course Type</label>
     <select name="" id="" required>
       <option value="" disabled selected i18n="@@selectCourseType">Select course type</option>
@@ -21,21 +21,21 @@
 
 
 
-  <div class="__double-input-container">
-    <div class="__single-input-field">
+  <div class="form__double-input-container">
+    <div class="form__single-input-field">
       <label i18n="@@absenceLimit" for="">Absence Limit</label>
       <input type="number">
     </div>
 
-    <div class="__single-input-field">
+    <div class="form__single-input-field">
       <label i18n="@@currentAbsenceCount" for="">Current Absence Count</label>
       <input type="number">
     </div>
   </div>
 
-  <div>
-    <app-button type="submit" btnBgColor="accent-dark">Add Course</app-button>
-    <app-button btnBgColor="foreground-highlight">Cancel</app-button>
+  <div class="form__buttons">
+    <app-button type="submit" btnBgColor="accent-dark" width="100%" [center]="true" [shadow]="true">Add Course</app-button>
+    <app-button btnBgColor="foreground-highlight" width="100%" [center]="true" [shadow]="true">Cancel</app-button>
   </div>
 
 

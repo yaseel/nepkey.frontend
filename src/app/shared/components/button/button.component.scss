@@ -19,6 +19,10 @@
     display: flex;
     justify-content: center;
   }
+
+  &--shadow {
+    box-shadow: 2px 2px 8px var(--shadow);
+  }
 }
 
 .btn:not(.btn--bg):hover {
