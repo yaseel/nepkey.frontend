@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IconComponent } from '../icon/icon.component';
 import { Icon } from '../../models/icon.model';
 import { Size } from '../../models/size.model';
@@ -6,7 +6,7 @@ import { Color } from '../../models/color.model';
 import { Image } from '../../models/image.model';
 import { Side } from '../../models/side.model';
 import { NgTemplateOutlet } from '@angular/common';
-import {ButtonBgColor} from '../../models/button-color.model';
+import { ButtonBgColor } from '../../models/button-color.model';
 
 @Component({
   selector: 'app-button',
@@ -27,7 +27,7 @@ export class ButtonComponent {
   @Input() width?: string;
   @Input() center: boolean = false;
   @Input() iconSide: Side = 'left';
-  @Input() type: HTMLButtonElement['type'] = 'button'
+  @Input() type: HTMLButtonElement['type'] = 'button';
 
   onClick() {
     this.clicked.emit();

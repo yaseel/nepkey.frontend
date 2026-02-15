@@ -9,7 +9,7 @@
   --secondary: #aaaaaa;
   --secondary-50: rgba(170, 170, 170, 0.5);
   --accent-light: #04bbfe;
-  --accent-dark: #0068E5;
+  --accent-dark: #0068e5;
   --label-background: rgba(120, 120, 128, 0.16);
   --shadow: rgba(0, 0, 0, 0.2);
 
@@ -35,7 +35,7 @@
 
 * {
   box-sizing: border-box;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
 }
 
 html {
@@ -64,7 +64,8 @@ label {
   margin-bottom: 5px;
 }
 
-input, select {
+input,
+select {
   background-color: var(--foreground-highlight);
   border: none;
   padding: 10px 20px;
@@ -86,6 +87,7 @@ input::placeholder {
   color: var(--secondary);
 }
 
-input:focus, select:focus {
+input:focus,
+select:focus {
   outline: 1px solid white;
 }

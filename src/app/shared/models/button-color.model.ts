@@ -1,4 +1,1 @@
-export type ButtonBgColor =
-  'background-highlight' |
-  'foreground-highlight' |
-  'accent-dark';
+export type ButtonBgColor = 'background-highlight' | 'foreground-highlight' | 'accent-dark';
