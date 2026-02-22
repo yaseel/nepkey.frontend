@@ -22,6 +22,7 @@
   &__buttons {
     display: flex;
     gap: 10px;
+    margin-top: 20px;
 
     app-button:first-child {
       flex: 3;
@@ -30,5 +31,12 @@
     app-button:last-child {
       flex: 2;
     }
+  }
+
+  &__error {
+    color: var(--error, #f87171);
+    font-size: var(--fs-sm);
+    margin-top: 4px;
+    margin-left: 10px;
   }
 }

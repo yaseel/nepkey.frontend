@@ -4,33 +4,60 @@
 </p>
 <hr />
 
-<form class="form" action="">
+<form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
   <div class="form__single-input-field">
-    <label i18n="@@courseName" for="">Course Name</label>
+    <label i18n="@@courseName" for="courseName">Course Name</label>
     <input
+      id="courseName"
+      name="courseName"
+      formControlName="courseName"
       type="text"
       placeholder="Functional Programming"
       i18n-placeholder="@@courseNamePlaceholder" />
+    @if (courseName.invalid && courseName.touched) {
+      <span class="form__error" i18n="@@courseNameRequired">Course name is required.</span>
+    }
   </div>
 
   <div class="form__single-input-field">
-    <label i18n="@@courseType" for="">Course Type</label>
-    <select name="" id="" required>
-      <option value="" disabled selected i18n="@@selectCourseType">Select course type</option>
+    <label i18n="@@courseType" for="courseType">Course Type</label>
+    <select id="courseType" name="courseType" formControlName="courseType">
+      <option value="" disabled i18n="@@selectCourseType">Select course type</option>
       <option i18n="@@lecture" value="lecture">Lecture</option>
       <option i18n="@@practice" value="practice">Practice</option>
     </select>
+    @if (courseType.invalid && courseType.touched) {
+      <span class="form__error" i18n="@@courseTypeRequired">Course type is required.</span>
+    }
   </div>
 
   <div class="form__double-input-container">
     <div class="form__single-input-field">
-      <label i18n="@@absenceLimit" for="">Absence Limit</label>
-      <input type="number" />
+      <label i18n="@@absenceLimit" for="absenceLimit">Absence Limit</label>
+      <input id="absenceLimit" name="absenceLimit" formControlName="absenceLimit" type="number" min="0" />
+      @if (absenceLimit.invalid && absenceLimit.touched) {
+        @if (absenceLimit.hasError('required')) {
+          <span class="form__error" i18n="@@absenceLimitRequired">Absence limit is required.</span>
+        } @else if (absenceLimit.hasError('min')) {
+          <span class="form__error" i18n="@@absenceLimitMin">Must be 0 or greater.</span>
+        } @else if (absenceLimit.hasError('max')) {
+          <span class="form__error" i18n="@@absenceLimitMax">Must be 100 or less.</span>
+        }
+      }
     </div>
 
     <div class="form__single-input-field">
-      <label i18n="@@currentAbsenceCount" for="">Current Absence Count</label>
-      <input type="number" />
+      <label i18n="@@currentAbsenceCount" for="currentAbsenceCount">Current Absence Count</label>
+      <input id="currentAbsenceCount" name="currentAbsenceCount" formControlName="currentAbsenceCount" type="number" min="0" />
+      @if (currentAbsenceCount.invalid && currentAbsenceCount.touched) {
+        @if (currentAbsenceCount.hasError('required')) {
+          <span class="form__error" i18n="@@currentAbsenceCountRequired">Absence count is required.</span>
+        } @else if (currentAbsenceCount.hasError('min')) {
+          <span class="form__error" i18n="@@currentAbsenceCountMin">Must be 0 or greater.</span>
+        } @else if (currentAbsenceCount.hasError('max')) {
+          <span class="form__error" i18n="@@currentAbsenceCountMax">Must be 100 or less.</span>
+        }
+      }
     </div>
   </div>
 
