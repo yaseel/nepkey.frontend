@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+import { Location } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ButtonComponent } from '../../shared/components/button/button.component';
 
@@ -9,6 +10,9 @@ import { ButtonComponent } from '../../shared/components/button/button.component
   styleUrl: './course-form.component.scss',
 })
 export class CourseFormComponent {
+  constructor(private location: Location) {
+  }
+
   private fb = inject(FormBuilder);
 
   form = this.fb.group({
@@ -40,5 +44,9 @@ export class CourseFormComponent {
       return;
     }
     // add course
+  }
+
+  onCancel() {
+    this.location.back();
   }
 }

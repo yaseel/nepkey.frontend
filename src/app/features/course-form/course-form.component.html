@@ -65,7 +65,7 @@
     <app-button type="submit" btnBgColor="accent-dark" width="100%" [center]="true" [shadow]="true">
       Add Course
     </app-button>
-    <app-button btnBgColor="foreground-highlight" width="100%" [center]="true" [shadow]="true">
+    <app-button (clicked)="onCancel()" btnBgColor="foreground-highlight" width="100%" [center]="true" [shadow]="true">
       Cancel
     </app-button>
   </div>
